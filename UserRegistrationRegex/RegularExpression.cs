@@ -71,7 +71,8 @@ namespace UserRegistrationRegex
 
         internal void Password()
         {
-            string passwordRE = @"^[A-Za-z]{8,}$";
+            string passwordRE = @"^((?=.*[A-Z]).{8,20})$";
+            //string passwordRE = @"^(?=.{8,.}$)(?=.*[A-Z])[A-Za-z]$";
             Regex rx = new Regex(passwordRE);
             Console.WriteLine("Enter password minimum 8 character");
             string password = Console.ReadLine();
