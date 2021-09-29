@@ -18,19 +18,29 @@ namespace UserRegistrationRegex
                 switch (opt)
                 {
                     case 1:
-                        re.FirstName();
+                        Console.WriteLine("Enter first name");
+                        string fname = Console.ReadLine();
+                        re.FirstName(fname);
                         break;
                     case 2:
-                        re.LastName();
+                        Console.WriteLine("Enter last name");
+                        string lname = Console.ReadLine();
+                        re.LastName(lname);
                         break;
                     case 3:
-                        re.Email();
+                        Console.WriteLine("Enter Email address");
+                        string email = Console.ReadLine();
+                        re.Email(email);
                         break;
                     case 4:
-                        re.PhoneNumber();
+                        Console.WriteLine("Enter phone number ");
+                        string phoneNumber = Console.ReadLine();
+                        re.PhoneNumber(phoneNumber);
                         break;
                     case 5:
-                        re.Password();
+                        Console.WriteLine("Enter Password");
+                        string password = Console.ReadLine();
+                        re.Password(password);
                         break;
                     default:
                         keepLooping = false;
