@@ -14,7 +14,9 @@ namespace UserRegistrationRegex
             Entered_Null,
             Entered_Empty,
             Expected_Minimum_length,
-            Failed_To_Follow_Regex
+            Failed_To_Follow_Regex,
+            No_Such_Class,
+            No_Such_Method
         }
 
         ExceptionName exceptionType;

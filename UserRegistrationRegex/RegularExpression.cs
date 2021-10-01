@@ -7,6 +7,7 @@ namespace UserRegistrationRegex
     public class RegularExpression
     {
         string NamePattern = @"^[A-Z]{1}[a-z]{2,20}$";
+        public RegularExpression() { }
         /// <summary>
         /// Check first name of user with given pattern
         /// </summary>
@@ -14,20 +15,20 @@ namespace UserRegistrationRegex
         {
             Regex rx = new Regex(NamePattern);
             try
-            {
-                
+            {   
                 if (firstname.Equals(string.Empty))
                 {
                     throw new CustomException(CustomException.ExceptionName.Entered_Empty, "Entered empty string as input");
                 }
                 if (rx.IsMatch(firstname) == true)
                 {
-                    Console.WriteLine("{0} pass regular expression", firstname);
+                    Console.WriteLine("{0} pass regular expression", firstname);    
                 }
                 else
                 {
                     Console.WriteLine("{0} fail to pass regular expression", firstname);
                     throw new CustomException(CustomException.ExceptionName.Failed_To_Follow_Regex, "Failed to follow input rule");
+                    
                 }
             }
             catch (NullReferenceException)
@@ -38,7 +39,6 @@ namespace UserRegistrationRegex
             {
                 Console.WriteLine(ex.Message);
             }
-            
         }
         /// <summary>
         /// Check last name of user with given pattern

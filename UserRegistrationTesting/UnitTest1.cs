@@ -7,10 +7,14 @@ namespace UserRegistrationTesting
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// Custom Exception For First Name As Empty
+        /// </summary>
+        /// <param name="name"></param>
         [TestMethod]
         [DataRow("")]
         [DataRow("Kalpesh")]
-        public void CustomeExceptionForFirstNameAsEmpty(string name)
+        public void CustomExceptionForFirstNameAsEmpty(string name)
         {
             try
             {
@@ -24,11 +28,14 @@ namespace UserRegistrationTesting
                 Assert.AreEqual("Entered empty string as input", ce.Message);
             }
         }
-
+        /// <summary>
+        /// Custom Exception For Last Name
+        /// </summary>
+        /// <param name="name"></param>
         [TestMethod]
         [DataRow(null)]
         [DataRow("Kalpesh")]
-        public void CustomeExceptionForLasttName(string name)
+        public void CustomExceptionForLasttName(string name)
         {
             try
             {
@@ -43,10 +50,13 @@ namespace UserRegistrationTesting
             }
             
         }
-
+        /// <summary>
+        /// Custom Exception For PhoneNumber
+        /// </summary>
+        /// <param name="number"></param>
         [TestMethod]
         [DataRow("3 9920036999")]
-        public void CustomeExceptionForPhoneNumber(string number)
+        public void CustomExceptionForPhoneNumber(string number)
         {
             try
             {
@@ -61,9 +71,13 @@ namespace UserRegistrationTesting
             }
         }
 
+        /// <summary>
+        /// Custom Exception For Email
+        /// </summary>
+        /// <param name="email"></param>
         [TestMethod]
         [DataRow("kalpsh@gmail")]
-        public void CustomeExceptionForEmail(string email)
+        public void CustomExceptionForEmail(string email)
         {
             try
             {
@@ -80,7 +94,7 @@ namespace UserRegistrationTesting
 
         [TestMethod]
         [DataRow("kalpsh@gmail")]
-        public void CustomeExceptionForPassword(string password)
+        public void CustomExceptionForPassword(string password)
         {
             try
             {
@@ -94,5 +108,32 @@ namespace UserRegistrationTesting
                 Assert.AreEqual("Failed to follow input rule", ce.Message);
             }
         }
+
+        [TestMethod]
+        public void GivenRegularExpressionClassName_ShouldReturnRegularExpressionObject()
+        {
+            
+            object expected = new RegularExpression();
+            object obj = UserRegistrationReflection.CreateUserRegistration("UserRegistrationRegex.RegularExpression", "RegularExpression");
+            expected.Equals(obj);
+        }
+
+        //[TestMethod]
+        //[DataRow("Kalpesh")]
+        //public void MethodInvokeUsingReflection()
+        //{
+        //    string expectedError = "Entered null as input";
+        //    string expectValue = "true";
+        //    try
+        //    {
+        //        string result = UserRegistrationReflection.InvokeRegularExpressionMethod("FirstName","Kalpesh");
+        //        Assert.AreEqual(expectValue, result);
+        //    }
+        //    catch (CustomException ce)
+        //    {
+        //        Assert.AreEqual(expectedError, ce.Message);
+        //    }
+            
+        //}
     }
 }
