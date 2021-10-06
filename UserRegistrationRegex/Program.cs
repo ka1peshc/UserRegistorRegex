@@ -28,6 +28,7 @@ namespace UserRegistrationRegex
                         Console.WriteLine("Enter last name");
                         string lname = Console.ReadLine();
                         re.LastName(lname);
+                        Console.WriteLine(reL.TestLastName(lname, RegularExpressionUsingLambda.NAMEPARAMETER));
                         break;
                     case 3:
                         Console.WriteLine("Enter Email address");
