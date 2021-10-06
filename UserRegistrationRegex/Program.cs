@@ -46,6 +46,7 @@ namespace UserRegistrationRegex
                         Console.WriteLine("Enter Password");
                         string password = Console.ReadLine();
                         re.Password(password);
+                        Console.WriteLine(reL.TestPassword(password, RegularExpressionUsingLambda.PASSWORDRegularExpression));
                         break;
                     default:
                         keepLooping = false;

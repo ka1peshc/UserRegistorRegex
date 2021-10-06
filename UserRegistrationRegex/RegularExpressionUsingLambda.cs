@@ -8,7 +8,8 @@ namespace UserRegistrationRegex
     {
         public const string NAMEPARAMETER = @"^[A-Z]{1}[a-z]{2,20}$";
         public const string EMAILRegularExpression = @"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
-        public const string phoneRE = @"^[0-9]{2}\s[0-9]{10}$";
+        public const string PHONENUMBERRegularExpression = @"^[0-9]{2}\s[0-9]{10}$";
+        public const string PASSWORDRegularExpression = @"^((?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*`~_+]).{8,20})$";
 
         public Func<string, string, bool> TestFirstName = (firstName, NAMEPARAMETER) => Regex.IsMatch(firstName, NAMEPARAMETER);
 
@@ -17,5 +18,7 @@ namespace UserRegistrationRegex
         public Func<string, string, bool> TestEmailName = (email, EMAILRegularExpression) => Regex.IsMatch(email, EMAILRegularExpression);
 
         public Func<string, string, bool> TestPhoneNumber = (phoneNumber, EMAILRegularExpression) => Regex.IsMatch(phoneNumber, EMAILRegularExpression);
+
+        public Func<string, string, bool> TestPassword = (password, PASSWORDRegularExpression) => Regex.IsMatch(password, PASSWORDRegularExpression);
     }
 }
