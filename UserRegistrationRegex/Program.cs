@@ -40,6 +40,7 @@ namespace UserRegistrationRegex
                         Console.WriteLine("Enter phone number ");
                         string phoneNumber = Console.ReadLine();
                         re.PhoneNumber(phoneNumber);
+                        Console.WriteLine(reL.TestPhoneNumber(phoneNumber, RegularExpressionUsingLambda.PHONENUMBERRegularExpression));
                         break;
                     case 5:
                         Console.WriteLine("Enter Password");
