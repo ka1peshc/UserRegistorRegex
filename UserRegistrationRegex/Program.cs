@@ -34,6 +34,7 @@ namespace UserRegistrationRegex
                         Console.WriteLine("Enter Email address");
                         string email = Console.ReadLine();
                         re.Email(email);
+                        Console.WriteLine(reL.TestEmailName(email, RegularExpressionUsingLambda.EMAILRegularExpression));
                         break;
                     case 4:
                         Console.WriteLine("Enter phone number ");
