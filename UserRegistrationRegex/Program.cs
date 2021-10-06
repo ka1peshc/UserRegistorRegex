@@ -9,6 +9,7 @@ namespace UserRegistrationRegex
         {
             Console.WriteLine("Hello World!");
             RegularExpression re = new RegularExpression();
+            RegularExpressionUsingLambda reL = new RegularExpressionUsingLambda();
             Console.WriteLine("Enter option number");
             bool keepLooping = true;
             while (keepLooping)
@@ -21,6 +22,7 @@ namespace UserRegistrationRegex
                         Console.WriteLine("Enter first name");
                         string fname = Console.ReadLine();
                         re.FirstName(fname);
+                        Console.WriteLine(reL.TestFirstName(fname, RegularExpressionUsingLambda.NAMEPARAMETER));
                         break;
                     case 2:
                         Console.WriteLine("Enter last name");
